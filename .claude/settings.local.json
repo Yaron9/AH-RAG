@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(PYTHONPATH=/Users/yaron/AGI/AH-RAG/src python3 -c \"\nfrom ah_rag.utils.config import load_config\nfrom ah_rag.utils.llm_client import is_llm_enabled, LLMModule\n\nconfig = load_config()\nprint(f''Config loaded: LLM enabled globally = {config.get(\"\"llm\"\", {}).get(\"\"enabled\"\", False)}'')\nprint(f''Knowledge extraction enabled = {is_llm_enabled(LLMModule.KNOWLEDGE_EXTRACTION)}'')\nprint(f''Agent decision enabled = {is_llm_enabled(LLMModule.AGENT_DECISION)}'')\n\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

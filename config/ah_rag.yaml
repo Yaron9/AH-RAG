@@ -1,0 +1,103 @@
+# === AH-RAG 统一配置文件 ===
+
+# 全局LLM配置
+llm:
+  enabled: true
+  default_temperature: 0.1
+  default_max_retries: 2
+
+  providers:
+    kimi:
+      api_key_env: KIMI_API_KEY
+      base_url_env: KIMI_BASE_URL
+      default_base_url: https://api.moonshot.cn/v1
+    qwen:
+      api_key_env: QWEN_API_KEY
+      base_url_env: QWEN_BASE_URL
+      default_base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
+    deepseek:
+      api_key_env: DEEPSEEK_API_KEY
+      base_url_env: DEEPSEEK_BASE_URL
+      default_base_url: https://api.deepseek.com
+    openai:
+      api_key_env: OPENAI_API_KEY
+      base_url_env: OPENAI_BASE_URL
+
+  modules:
+    knowledge_extraction:
+      enabled: true
+      provider: kimi
+      model: moonshot-v1-8k
+      temperature: 0.2
+      max_retries: 6
+      rate_limit_wait: 6
+      retry_jitter: 1.5
+    semantic_aggregation:
+      enabled: true
+      provider: kimi
+      model: moonshot-v1-8k
+      temperature: 0.2
+      max_retries: 5
+      rate_limit_wait: 5
+      retry_jitter: 1.0
+    agent_decision:
+      enabled: true
+      provider: deepseek
+      model: deepseek-chat
+      temperature: 0.0
+    answer_generation:
+      enabled: true
+      provider: kimi
+      model: moonshot-v1-8k
+      temperature: 0.1
+      max_retries: 3
+    evaluation_judge:
+      enabled: true
+      provider: deepseek
+      model: deepseek-chat
+      temperature: 0.1
+      sample_ratio: 0.2
+      max_retries: 1
+
+# 日志配置
+logging:
+  log_level: normal   # off|normal|debug|trace
+  redact: true
+
+# 搜索配置
+search:
+  alpha: 0.6
+  beta: 0.2
+  gamma: 0.1
+  delta: 0.1
+  member_top_m: 5
+  judge_overall_min: null
+  confidence_min: null
+  type_filter: null   # e.g. ["summary"]
+
+# 推理配置
+inference:
+  steps: 4
+
+# 答案生成详细配置（保留兼容性）
+answer:
+  total_context_budget: 6000
+  skeleton_ratio: 0.2
+  reserve_ratio: 0.1
+  summarizer_model: qwen2:7b-instruct
+  summarizer_max_tokens: 256
+  enable_kept_spans: true
+  enable_cache: true
+
+# 评估配置
+evaluation:
+  max_concurrency: 2
+  timeout_s: 60
+  seed: 42
+  enable_token_metrics: false
+  naive_rag_top_k: 5
+
+rl:
+  inference:
+    use_ppo: true
+    ppo_model_path: artifacts/rl/ppo_policy.pt

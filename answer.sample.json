@@ -1,0 +1,43 @@
+{
+  "query": "量子处理器 发布",
+  "answer": "证据不足或生成失败，返回最相关证据摘要供审阅。",
+  "rationale": "",
+  "citations": [],
+  "used_actions": [
+    {
+      "action": "semantic_anchor",
+      "query": "量子处理器 发布",
+      "top_k": 5,
+      "returned": 5,
+      "time_s": 0.137
+    },
+    {
+      "action": "expand_parents",
+      "inputs": [
+        "ent:0f8ebd17e3"
+      ],
+      "returned": 0
+    },
+    {
+      "action": "expand_related",
+      "inputs": [
+        "ent:0f8ebd17e3"
+      ],
+      "returned": 0
+    },
+    {
+      "action": "expand_related",
+      "inputs": [
+        "ent:0f8ebd17e3"
+      ],
+      "returned": 0
+    }
+  ],
+  "metrics": {
+    "steps": 4,
+    "queries": 1,
+    "expansions": 3,
+    "time_s": 0.13703724998049438
+  },
+  "session_path": "artifacts/phase2/20250919T071656-8de5b3"
+}

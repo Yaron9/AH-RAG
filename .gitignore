@@ -1,0 +1,37 @@
+# Environment variables
+.env
+
+# OS/editor cruft
+.DS_Store
+.idea/
+.vscode/
+.ipynb_checkpoints/
+
+# Virtual environment & caches
+venv/
+__pycache__/
+.pytest_cache/
+
+# Large runtime artifacts (do not version)
+artifacts/
+graph/
+graph_backup/
+vector_db/
+reports/
+
+# Temporary files
+tmp_context*.txt
+*.tmp
+*.cache
+
+# Model/checkpoint/binary blobs
+*.pt
+*.ckpt
+*.bin
+*.npy
+*.npz
+*.sqlite3
+
+# Logs and local outputs
+*.log
+*.jsonl

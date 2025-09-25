@@ -1,0 +1,30 @@
+{
+  "directed": true,
+  "multigraph": false,
+  "graph": {
+    "search_params": {
+      "alpha": 0.6,
+      "beta": 0.2,
+      "gamma": 0.1,
+      "delta": 0.1,
+      "judge_overall_min": null,
+      "confidence_min": null,
+      "member_top_m": 5,
+      "type_filter": null,
+      "layer_boost": {
+        "entity": 0.0,
+        "summary": 1.0,
+        "hyperedge": 0.0
+      }
+    },
+    "dirty": false,
+    "vector_index": {
+      "db_path": "vector_db",
+      "model": "all-MiniLM-L6-v2",
+      "indexed_nodes": 0,
+      "indexed_meta": {}
+    }
+  },
+  "nodes": [],
+  "links": []
+}

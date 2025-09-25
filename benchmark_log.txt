@@ -1,0 +1,27 @@
+🔍 Using HotpotQA context with 10 passages
+Building knowledge graph from HotpotQA context using demo_cli.py...
+Graph built successfully
+🔍 Using HotpotQA context with 10 passages
+Building knowledge graph from HotpotQA context using demo_cli.py...
+Graph built successfully
+🔍 Using HotpotQA context with 10 passages
+Building knowledge graph from HotpotQA context using demo_cli.py...
+Graph built successfully
+🔍 Using HotpotQA context with 10 passages
+Building knowledge graph from HotpotQA context using demo_cli.py...
+Graph built successfully
+🔍 Using HotpotQA context with 10 passages
+Building knowledge graph from HotpotQA context using demo_cli.py...
+Graph built successfully
+🏆 Unified RAG Evaluation Results (Claude.md Framework)
+======================================================================
+| dataset | system | overall_score | f1 | em | contextual_recall | faithfulness | primary_issues |
+|---|---|---|---|---|---|---|---|
+| hotpotqa | ah_rag | 0.723 | 18.333 | 0.000 | 1.000 | 0.500 | edge_case(5) |
+
+🩺 Diagnosis Summary:
+------------------------------
+primary_issue  edge_case
+system                  
+ah_rag                 5
+
